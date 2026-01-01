@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星夜塔罗 | Arcana of the Moon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sky-glow"></div>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-icon">☾</span>
+      <div>
+        <div class="brand-title">星夜塔罗</div>
+        <div class="brand-subtitle">Arcana of the Moon</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#reading">占卜</a>
+      <a href="#cards">牌组</a>
+      <a href="#guide">指引</a>
+    </nav>
+    <button class="ghost-btn">预约解读</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Moonlit Tarot Experience</p>
+        <h1>在星光与秘术之间<br>聆听塔罗的低语</h1>
+        <p class="lede">选择你的阵位，轻触卡面，宇宙将以符号回应。优雅的月光界面，带你体验沉浸式牌阵抽取。</p>
+        <div class="cta-row">
+          <button class="primary" id="drawButton">立即抽牌</button>
+          <button class="secondary" id="resetButton">重新洗牌</button>
+        </div>
+        <div class="mode-switch" aria-label="选择牌阵模式">
+          <button class="mode-btn active" data-mode="daily">单牌指引</button>
+          <button class="mode-btn" data-mode="triple">三牌牌阵</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="celestial-circle">
+          <div class="moon"></div>
+          <div class="orbit orbit-1"></div>
+          <div class="orbit orbit-2"></div>
+          <div class="orbit orbit-3"></div>
+          <div class="floating-card" aria-hidden="true"></div>
+        </div>
+        <div class="visual-caption">月亮、星辰与命运的舞台</div>
+      </div>
+    </section>
+
+    <section class="reading" id="reading">
+      <div class="panel">
+        <header class="panel-header">
+          <div>
+            <p class="eyebrow">Arcana Spread</p>
+            <h2>洗牌、切牌、抽牌</h2>
+            <p class="lede">灵感随月升起，从 22 张大秘仪中随机抽取，呈现当下、指引或三重时间线。</p>
+          </div>
+          <div class="stats">
+            <div><span>22</span><small>大秘仪</small></div>
+            <div><span>∞</span><small>可能性</small></div>
+            <div><span>3</span><small>位面</small></div>
+          </div>
+        </header>
+
+        <div class="spread" id="spread"></div>
+        <div class="summary" id="summary">
+          <div class="summary-title">等待抽牌...</div>
+          <p class="summary-text">点击「立即抽牌」开始。你可以在单牌与三牌模式间切换，重置后重新洗牌。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards" id="cards">
+      <div class="panel">
+        <header class="panel-header">
+          <div>
+            <p class="eyebrow">Deck Preview</p>
+            <h2>塔罗意象速览</h2>
+            <p class="lede">从愚者到世界，每一张牌都是一个旅程的章节，亦是你与宇宙的对话。</p>
+          </div>
+        </header>
+        <div class="grid" id="cardGrid"></div>
+      </div>
+    </section>
+
+    <section class="guide" id="guide">
+      <div class="panel">
+        <header class="panel-header">
+          <div>
+            <p class="eyebrow">How it works</p>
+            <h2>如何与牌对话</h2>
+          </div>
+        </header>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h3>专注与设意</h3>
+              <p>在心中提出问题或主题，越具体越能听见塔罗的回应。</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h3>选择牌阵</h3>
+              <p>单牌指引聚焦当下能量，三牌阵描绘过去 / 现在 / 未来的故事线。</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h3>解读符号</h3>
+              <p>观察关键词与意象，结合你的直觉，牌面将揭示答案。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>星夜塔罗 · Moonlit Arcana</div>
+    <div class="footer-links">
+      <a href="#">隐私</a>
+      <a href="#">使用条款</a>
+      <a href="mailto:hello@arcanamoon.com">联系</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
