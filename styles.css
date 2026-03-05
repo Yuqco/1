@@ -1,0 +1,197 @@
+:root {
+  --bg: #f4f6fb;
+  --panel: #fff;
+  --text: #1a1d29;
+  --muted: #65708a;
+  --primary: #00a1d6;
+  --shadow: 0 8px 24px rgba(19, 31, 73, 0.08);
+}
+
+body.dark {
+  --bg: #0f1117;
+  --panel: #1a1f2e;
+  --text: #f0f3ff;
+  --muted: #a5afca;
+  --primary: #4cc9ff;
+  --shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 20px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.logo { font-size: 22px; font-weight: 700; color: var(--primary); }
+.main-nav { display: flex; gap: 14px; }
+.search-wrap { display: flex; flex: 1; gap: 8px; }
+.search-wrap input {
+  flex: 1;
+  border: 1px solid #d9e1f2;
+  border-radius: 20px;
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--text);
+}
+button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 8px 12px;
+  background: #e9efff;
+}
+.post-btn { background: #fb7299; color: white; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr 300px;
+  gap: 16px;
+  padding: 16px;
+}
+
+.left-sidebar, .right-sidebar .panel, .hero-banner, .video-card, .quick-tabs {
+  background: var(--panel);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+.left-sidebar {
+  padding: 16px;
+  height: fit-content;
+}
+.left-sidebar ul { list-style: none; padding: 0; margin: 8px 0 16px; }
+.left-sidebar li { padding: 8px 0; color: var(--muted); }
+
+.content-area { min-width: 0; }
+.hero-banner {
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  background: linear-gradient(120deg, #b6ecff, #ffe2f0);
+  color: #1f2847;
+}
+.quick-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  margin-bottom: 14px;
+}
+.tab.active {
+  background: var(--primary);
+  color: white;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.video-card { overflow: hidden; }
+.video-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.video-body { padding: 10px; }
+.video-title { font-size: 14px; font-weight: 600; line-height: 1.4; }
+.video-meta {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-sidebar { display: flex; flex-direction: column; gap: 12px; }
+.panel { padding: 14px; }
+#hotList li, #liveList .live-item {
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.player-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+.hidden { display: none; }
+.player-container {
+  width: min(1000px, 96vw);
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 14px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+video {
+  width: 100%;
+  max-height: 62vh;
+  border-radius: 10px;
+  background: black;
+}
+.player-meta .stats {
+  display: flex;
+  gap: 12px;
+  color: var(--muted);
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+#danmakuInput { flex: 1; min-width: 220px; padding: 8px; }
+
+.danmaku-layer {
+  position: absolute;
+  pointer-events: none;
+  inset: 20px 20px 190px 20px;
+  overflow: hidden;
+}
+.danmaku {
+  position: absolute;
+  white-space: nowrap;
+  animation: fly 7s linear;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+@keyframes fly {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-120%); }
+}
+
+footer {
+  text-align: center;
+  padding: 18px;
+  color: var(--muted);
+}
+
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 1fr; }
+  .left-sidebar, .right-sidebar { order: 2; }
+}
