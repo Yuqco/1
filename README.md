@@ -1,17 +1,44 @@
-# Repository 1
+# MilkyVideo（B站风格练习项目）
 
-Welcome to this repository! This is the initial README file to get started.
+这是一个 **B站风格的视频网站克隆练习**，用于演示前端页面结构、交互逻辑和基础播放器能力。
 
-## Overview
-This repository has been initialized and is ready for development.
+> 说明：本项目不包含 B站 官方素材、商标或业务代码，仅做学习用途。
 
-## Getting Started
-- Clone the repository
-- Install any necessary dependencies
-- Follow the contribution guidelines
+## 功能覆盖
 
-## Contributing
-Please ensure all contributions follow the project standards and guidelines.
+- 顶部导航 + 搜索 + 登录状态切换
+- 首页分区、推荐流、热门榜、直播推荐
+- 推荐/关注/热门/排行榜 tab 切换
+- 视频卡片网格与筛选
+- 模拟播放弹窗（video + 数据面板）
+- 点赞 / 投币 / 收藏交互
+- 弹幕发送与自动漂浮
+- 深色模式切换
+- 本地 localStorage 登录态记忆
 
----
-*Repository initialized on 2025-12-26*
+## 本地运行
+
+无需安装依赖，直接启动静态服务：
+
+```bash
+python3 -m http.server 4173
+```
+
+打开浏览器访问：
+
+```text
+http://127.0.0.1:4173
+```
+
+## 项目结构
+
+- `index.html`：页面结构
+- `styles.css`：样式与响应式布局
+- `app.js`：数据、渲染与交互逻辑
+
+## 后续可扩展
+
+- 接入真实后端 API 与鉴权
+- 上线评论区、投稿页、个人主页
+- 视频分P与清晰度切换
+- 推荐算法与个性化排序
